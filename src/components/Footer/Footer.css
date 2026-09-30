@@ -1,0 +1,76 @@
+.lh-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem var(--lh-gutter) 2.6rem;
+  border-top: 1px solid var(--lh-line);
+  background: transparent;
+}
+
+.lh-footer__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lh-footer__mark {
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+}
+
+.lh-footer__tag {
+  color: color-mix(in srgb, var(--lh-text-primary) 58%, transparent);
+  font-family: var(--lh-font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.lh-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.4rem;
+}
+
+.lh-footer__nav a {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.lh-footer__credit {
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--lh-line);
+}
+
+.lh-footer__credit-copy {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--lh-text-primary) 64%, transparent);
+}
+
+.lh-footer__credit-links {
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lh-text-primary) 58%, transparent);
+}
+
+.lh-footer__credit-links a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.25s ease;
+}
+
+.lh-footer__credit-links a:hover {
+  color: var(--lh-text-accent);
+}
+
+@media (min-width: 768px) {
+  .lh-footer__main {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}

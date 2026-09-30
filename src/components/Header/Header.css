@@ -1,0 +1,130 @@
+.lh-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--lh-z-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem var(--lh-gutter);
+  color: var(--lh-text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: background 0.45s ease, opacity 0.7s ease;
+}
+
+.lh-header.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lh-header.is-scrolled {
+  background: color-mix(in srgb, var(--lh-bg-espresso) 82%, transparent);
+}
+
+.lh-header__mark {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+}
+
+.lh-header__desktop {
+  display: none;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.lh-header__nav {
+  gap: 1.05rem;
+}
+
+.lh-header__nav a,
+.lh-header__panel a {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.lh-header__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: inherit;
+}
+
+.lh-header__panel {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  background: var(--lh-bg-espresso);
+}
+
+.lh-header__panel[hidden] {
+  display: none;
+}
+
+.lh-header__panel nav {
+  display: grid;
+  gap: 1.4rem;
+  text-align: center;
+}
+
+.lh-header__panel a {
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.lh-header__language {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 48%, transparent);
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.14em;
+}
+
+.lh-header__language button {
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.lh-header__language button + button::before {
+  content: '/';
+  margin-right: 0.42rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 28%, transparent);
+}
+
+.lh-header__language button.is-active {
+  color: var(--lh-text-primary);
+}
+
+.lh-header__language--mobile {
+  margin-top: 1.8rem;
+  font-size: 0.82rem;
+}
+
+@media (min-width: 1024px) {
+  .lh-header__desktop,
+  .lh-header__nav {
+    display: flex;
+  }
+
+  .lh-header__toggle,
+  .lh-header__panel {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .lh-header__nav {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,47 @@
+:root {
+  --lh-espresso: #432818;
+  --lh-deep-brown: #99582a;
+  --lh-burgundy: #6f1d1b;
+  --lh-warm-cream: #ffe6a7;
+  --lh-muted-amber: #bb9457;
+
+  --lh-bg-espresso: var(--lh-espresso);
+  --lh-bg-deep-brown: var(--lh-deep-brown);
+  --lh-bg-burgundy: var(--lh-burgundy);
+
+  --lh-text-primary: #ded4c4;
+  --lh-text-accent: #a7794f;
+  --lh-background: var(--lh-espresso);
+  --lh-text: var(--lh-text-primary);
+  --lh-line: color-mix(in srgb, var(--lh-warm-cream) 18%, transparent);
+
+  --lh-font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --lh-font-serif: 'Newsreader', Georgia, serif;
+
+  --lh-fs-hero: clamp(3.4rem, 11vw, 9.5rem);
+  --lh-fs-display: clamp(2.4rem, 6.4vw, 5.6rem);
+  --lh-fs-h2: clamp(1.8rem, 4.2vw, 3.4rem);
+  --lh-fs-body: clamp(1rem, 1.4vw, 1.2rem);
+  --lh-fs-eyebrow: clamp(0.68rem, 0.9vw, 0.78rem);
+
+  --lh-space-1: 0.25rem;
+  --lh-space-2: 0.5rem;
+  --lh-space-3: 1rem;
+  --lh-space-4: 1.5rem;
+  --lh-space-5: 2rem;
+  --lh-space-6: 3rem;
+  --lh-space-7: 4rem;
+  --lh-space-8: 6rem;
+
+  --lh-section-y: clamp(4.5rem, 12vw, 9rem);
+  --lh-gutter: clamp(1.25rem, 4vw, 5rem);
+  --lh-container: 92rem;
+
+  --lh-z-base: 0;
+  --lh-z-header: 100;
+  --lh-z-grain: 150;
+  --lh-z-cursor: 200;
+  --lh-z-preloader: 300;
+
+  /* Breakpoints: 480px, 768px, 1024px, 1440px */
+}

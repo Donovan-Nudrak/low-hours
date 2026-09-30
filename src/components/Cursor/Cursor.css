@@ -1,0 +1,43 @@
+.lh-cursor {
+  display: none;
+}
+
+@media (pointer: fine) {
+  html.lh-has-cursor,
+  html.lh-has-cursor * {
+    cursor: none;
+  }
+
+  .lh-cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--lh-z-cursor);
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--lh-warm-cream) 82%, transparent);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: width 0.35s ease, height 0.35s ease, background 0.35s ease;
+  }
+
+  html.lh-cursor-hover .lh-cursor {
+    width: 2.4rem;
+    height: 2.4rem;
+    background: color-mix(in srgb, var(--lh-muted-amber) 70%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.lh-has-cursor,
+  html.lh-has-cursor * {
+    cursor: auto;
+  }
+
+  .lh-cursor {
+    display: none;
+  }
+}

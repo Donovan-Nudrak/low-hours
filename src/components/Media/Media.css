@@ -1,0 +1,80 @@
+.lh-media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid var(--lh-muted-amber);
+  border-radius: 0.75rem;
+  background: var(--lh-bg-deep-brown);
+}
+
+.lh-media__surface {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lh-media__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lh-media.has-image .lh-media__surface {
+  background: none;
+}
+
+.lh-media__surface::before,
+.lh-media__surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.lh-media--espresso .lh-media__surface {
+  background:
+    radial-gradient(120% 80% at 18% 12%, color-mix(in srgb, var(--lh-warm-cream) 12%, transparent), transparent 46%),
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--lh-espresso) 78%, #000) 0%,
+      color-mix(in srgb, var(--lh-espresso) 48%, #000) 100%
+    );
+}
+
+.lh-media--brown .lh-media__surface {
+  background:
+    radial-gradient(90% 70% at 80% 20%, color-mix(in srgb, var(--lh-muted-amber) 22%, transparent), transparent 42%),
+    linear-gradient(
+      150deg,
+      color-mix(in srgb, var(--lh-deep-brown) 62%, #000) 0%,
+      color-mix(in srgb, var(--lh-espresso) 52%, #000) 100%
+    );
+}
+
+.lh-media--burgundy .lh-media__surface {
+  background:
+    radial-gradient(80% 70% at 20% 80%, color-mix(in srgb, var(--lh-muted-amber) 16%, transparent), transparent 50%),
+    linear-gradient(
+      165deg,
+      var(--lh-burgundy) 0%,
+      color-mix(in srgb, var(--lh-burgundy) 52%, #000) 100%
+    );
+}
+
+.lh-media--amber .lh-media__surface {
+  background:
+    radial-gradient(70% 60% at 70% 30%, color-mix(in srgb, var(--lh-warm-cream) 18%, transparent), transparent 48%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--lh-muted-amber) 72%, #000) 0%,
+      color-mix(in srgb, var(--lh-espresso) 62%, #000) 100%
+    );
+}
+
+.lh-media__surface::after {
+  background:
+    linear-gradient(180deg, transparent 42%, color-mix(in srgb, var(--lh-espresso) 55%, transparent) 100%),
+    radial-gradient(circle at 30% 20%, transparent 0 18%, color-mix(in srgb, #000 18%, transparent) 70%);
+}
+

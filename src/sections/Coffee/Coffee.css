@@ -1,0 +1,65 @@
+.coffee {
+  padding: var(--lh-section-y) var(--lh-gutter);
+}
+
+.coffee__title {
+  max-width: 12ch;
+  margin-bottom: clamp(2.5rem, 8vw, 6rem);
+  font-size: var(--lh-fs-display);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.coffee__list {
+  display: grid;
+  gap: clamp(2.5rem, 7vw, 6rem);
+  list-style: none;
+}
+
+.coffee__item {
+  display: grid;
+  gap: 1rem;
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--lh-line);
+}
+
+.coffee__index {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.18em;
+}
+
+.coffee__copy h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+  font-size: clamp(1.8rem, 5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.coffee__price {
+  color: var(--lh-muted-amber);
+  font-size: 0.52em;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.coffee__media {
+  width: min(100%, 18rem);
+}
+
+@media (min-width: 768px) {
+  .coffee__item {
+    grid-template-columns: 3rem 1fr min(32%, 16rem);
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .coffee__media {
+    justify-self: end;
+  }
+}

@@ -1,0 +1,333 @@
+.radio {
+  position: relative;
+  padding: var(--lh-section-y) var(--lh-gutter);
+}
+
+.radio > audio {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.radio__grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4.5rem);
+}
+
+.radio__eyebrow {
+  margin-bottom: 0.8rem;
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.radio__title {
+  font-size: var(--lh-fs-display);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.radio__now {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.4rem;
+  max-width: 22rem;
+  font-size: 1.05rem;
+}
+
+.radio__now span {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lh-text-accent);
+}
+
+.radio__demo {
+  display: grid;
+  gap: 0.28rem;
+  margin-top: 1rem;
+  max-width: 22rem;
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 78%, transparent);
+}
+
+.radio__demo span {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lh-text-accent);
+}
+
+.radio__player {
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--lh-line);
+  border-bottom: 1px solid var(--lh-line);
+}
+
+.radio__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.radio__control {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  height: 2.4rem;
+  border: 1px solid color-mix(in srgb, var(--lh-warm-cream) 35%, transparent);
+  border-radius: 999px;
+  color: var(--lh-text-primary);
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.radio__control:hover {
+  border-color: color-mix(in srgb, var(--lh-muted-amber) 55%, transparent);
+}
+
+.radio__control--play {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+}
+
+.radio__control--skip {
+  min-width: 2.6rem;
+  padding: 0 0.55rem;
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.radio__control--mute {
+  width: 2.4rem;
+  border-radius: 50%;
+}
+
+.radio__control--nudge {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.radio__volume-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.radio__volume {
+  display: flex;
+  align-items: end;
+  gap: 0.2rem;
+  height: 1.7rem;
+  padding: 0.28rem 0.55rem 0.32rem;
+  border: 1px solid color-mix(in srgb, var(--lh-warm-cream) 35%, transparent);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.radio__volume:hover {
+  border-color: color-mix(in srgb, var(--lh-muted-amber) 55%, transparent);
+}
+
+.radio__volume span {
+  width: 0.22rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lh-warm-cream) 28%, transparent);
+  transform-origin: bottom;
+}
+
+.radio__volume span.is-on {
+  background: var(--lh-muted-amber);
+}
+
+.radio__wave {
+  display: flex;
+  align-items: end;
+  gap: 0.28rem;
+  height: 3.2rem;
+}
+
+.radio__wave span {
+  flex: 1;
+  height: 28%;
+  background: color-mix(in srgb, var(--lh-warm-cream) 55%, transparent);
+  transform-origin: bottom;
+}
+
+.radio__wave.is-playing span {
+  animation: lh-wave 1.1s ease-in-out infinite alternate;
+}
+
+.radio__timeline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.radio__time {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.12em;
+  color: var(--lh-text-accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.radio__progress {
+  position: relative;
+  height: 1px;
+  background: var(--lh-line);
+  cursor: pointer;
+}
+
+.radio__progress::before {
+  content: '';
+  position: absolute;
+  inset: -0.7rem 0;
+}
+
+.radio__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--lh-muted-amber);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.radio__schedule {
+  display: grid;
+  gap: 0;
+  list-style: none;
+}
+
+.radio__slot {
+  display: flex;
+  border-top: 1px solid var(--lh-line);
+}
+
+.radio__slot button {
+  display: grid;
+  gap: 0.25rem;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
+  padding: 1.1rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.radio__slot button:hover {
+  border-color: color-mix(in srgb, var(--lh-muted-amber) 55%, transparent);
+}
+
+.radio__slot.is-selected button {
+  border-color: var(--lh-muted-amber);
+  background: color-mix(in srgb, var(--lh-espresso) 72%, transparent);
+}
+
+.radio__slot-time {
+  font-size: var(--lh-fs-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lh-text-primary) 62%, transparent);
+}
+
+.radio__slot.is-selected .radio__slot-time {
+  color: var(--lh-muted-amber);
+}
+
+.radio__slot-sound {
+  font-size: 1.15rem;
+}
+
+@media (min-width: 768px) {
+  .radio__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .radio__player {
+    grid-column: 1 / -1;
+  }
+
+  .radio__schedule {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .radio__slot {
+    border-top: 0;
+    border-left: 1px solid var(--lh-line);
+  }
+
+  .radio__slot button {
+    min-height: 6.5rem;
+    padding: 1.15rem 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .radio__player {
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .radio__controls {
+    gap: 0.28rem;
+  }
+
+  .radio__control--play {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .radio__control--skip {
+    min-width: 2.35rem;
+    padding: 0 0.4rem;
+  }
+
+  .radio__volume {
+    height: 1.55rem;
+    padding-inline: 0.4rem;
+  }
+
+  .radio__control--nudge {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+@keyframes lh-wave {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio__wave.is-playing span {
+    animation: none;
+  }
+}

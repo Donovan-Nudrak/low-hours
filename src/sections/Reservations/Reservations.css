@@ -1,0 +1,250 @@
+.reservations {
+  min-height: 82svh;
+  display: grid;
+  align-items: center;
+  padding: clamp(4rem, 10vw, 7rem) var(--lh-gutter);
+}
+
+.reservations__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.reservations__intro {
+  max-width: 34rem;
+}
+
+.reservations__number,
+.reservations__field label {
+  font-size: var(--lh-fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.reservations__number {
+  margin-bottom: 1rem;
+  color: var(--lh-text-accent);
+}
+
+.reservations__heading {
+  font-size: var(--lh-fs-display);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.reservations__copy {
+  max-width: 26rem;
+  margin-top: 1.25rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 74%, transparent);
+  font-family: var(--lh-font-serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.reservations__form {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--lh-line);
+}
+
+.reservations__field {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.42rem;
+}
+
+.reservations__field--preference,
+.reservations__field--ride {
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.reservations__field label,
+.reservations__field legend {
+  color: color-mix(in srgb, var(--lh-text-primary) 70%, transparent);
+}
+
+.reservations__field legend {
+  font-size: var(--lh-fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.reservations__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.reservations__options label {
+  cursor: pointer;
+}
+
+.reservations__options input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.reservations__options span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--lh-muted-amber);
+  background: color-mix(in srgb, var(--lh-espresso) 88%, transparent);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.reservations__options label:hover span {
+  border-color: color-mix(in srgb, var(--lh-muted-amber) 60%, transparent);
+}
+
+.reservations__options input:focus-visible + span {
+  outline: 1px solid var(--lh-muted-amber);
+  outline-offset: 4px;
+}
+
+.reservations__options input:checked + span {
+  border-color: var(--lh-muted-amber);
+  background: color-mix(in srgb, var(--lh-muted-amber) 18%, transparent);
+  color: var(--lh-text-primary);
+}
+
+.reservations__field input,
+.reservations__field select,
+.reservations__field textarea {
+  width: 100%;
+  border: 1px solid var(--lh-muted-amber);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--lh-espresso) 88%, transparent);
+  color: var(--lh-text-primary);
+  color-scheme: dark;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.reservations__field input,
+.reservations__field select {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.reservations__field textarea {
+  min-height: 4.4rem;
+  max-height: 7rem;
+  padding: 0.7rem 0.8rem;
+  line-height: 1.35;
+  resize: vertical;
+}
+
+.reservations__field select option {
+  background: var(--lh-espresso);
+  color: var(--lh-text-primary);
+}
+
+.reservations__field input:hover,
+.reservations__field select:hover,
+.reservations__field textarea:hover {
+  border-color: color-mix(in srgb, var(--lh-muted-amber) 60%, transparent);
+}
+
+.reservations__field input:focus,
+.reservations__field select:focus,
+.reservations__field textarea:focus {
+  border-color: var(--lh-muted-amber);
+  background: color-mix(in srgb, var(--lh-espresso) 78%, transparent);
+}
+
+.reservations__field input[aria-invalid='true'],
+.reservations__field select[aria-invalid='true'],
+.reservations__field[aria-invalid='true'] .reservations__options span {
+  border-color: var(--lh-burgundy);
+}
+
+.reservations__error {
+  color: var(--lh-text-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.reservations__submit,
+.reservations__confirmation button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--lh-muted-amber);
+  border-radius: 999px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.reservations__submit:hover,
+.reservations__confirmation button:hover {
+  background: var(--lh-muted-amber);
+  color: var(--lh-espresso);
+}
+
+.reservations__confirmation {
+  min-height: 18rem;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.75rem;
+  padding-block: 2rem;
+  border-top: 1px solid var(--lh-line);
+  border-bottom: 1px solid var(--lh-line);
+}
+
+.reservations__confirmation p:first-child {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.reservations__confirmation p:nth-child(2) {
+  margin-bottom: 0.8rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 72%, transparent);
+  font-family: var(--lh-font-serif);
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .reservations__form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1.2rem;
+  }
+
+  .reservations__field--preference,
+  .reservations__field--ride,
+  .reservations__submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reservations__grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}

@@ -1,0 +1,19 @@
+.lh-section-title__meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  color: color-mix(in srgb, var(--lh-text-primary) 58%, transparent);
+  font-size: var(--lh-fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lh-section-title__heading {
+  max-width: 14ch;
+  font-size: var(--lh-fs-display);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
