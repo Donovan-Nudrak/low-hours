@@ -20,7 +20,7 @@ export interface TranslationDictionary {
   }
   hero: {
     titleLines: readonly string[]
-    subtitle: string
+    slogan: string
     status: string
     cta: string
     media: ImageTranslation
@@ -122,8 +122,8 @@ export const translations = {
       closeMenu: 'Close menu',
     },
     hero: {
-      titleLines: ['Stay', 'a little', 'longer.'],
-      subtitle: 'Coffee, music and quiet nights.',
+      titleLines: ['LOW', 'HOURS'],
+      slogan: 'Coffee. Music. Late nights.',
       status: 'Open late.',
       cta: 'Come inside',
       media: {
@@ -233,8 +233,8 @@ export const translations = {
       closeMenu: 'Cerrar menú',
     },
     hero: {
-      titleLines: ['Quédate', 'un poco', 'más.'],
-      subtitle: 'Café, música y noches tranquilas.',
+      titleLines: ['LOW', 'HOURS'],
+      slogan: 'Café. Música. Madrugada.',
       status: 'Abierto hasta tarde.',
       cta: 'Entra',
       media: {

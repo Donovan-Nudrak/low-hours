@@ -22,9 +22,10 @@ export function Hero({ ready }: HeroProps) {
 
     const ctx = gsap.context(() => {
       if (prefersReducedMotion() || hasEnteredRef.current) {
-        gsap.set(['.hero__title span', '.hero__copy', '.hero__cta', '.hero__media'], {
-          clearProps: 'all',
-        })
+        gsap.set(
+          ['.hero__title span', '.hero__slogan', '.hero__copy', '.hero__cta', '.hero__media'],
+          { clearProps: 'all' },
+        )
         hasEnteredRef.current = true
         return
       }
@@ -34,8 +35,9 @@ export function Hero({ ready }: HeroProps) {
 
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         revealLines('.hero__title span')
-        revealUp('.hero__copy', { delay: 0.35 })
-        revealUp('.hero__cta', { delay: 0.48 })
+        revealUp('.hero__slogan', { delay: 0.22 })
+        revealUp('.hero__copy', { delay: 0.38 })
+        revealUp('.hero__cta', { delay: 0.5 })
         maskReveal('.hero__media', { delay: 0.2 })
       })
     }, root)
@@ -46,17 +48,16 @@ export function Hero({ ready }: HeroProps) {
   return (
     <section className="hero" data-section="hero" id="hero" ref={rootRef}>
       <div className="hero__grid lh-container">
-        <h1 className="hero__title" key={language}>
-          {t.hero.titleLines.map((line) => (
-            <span key={line}>{line}</span>
-          ))}
-        </h1>
+        <div className="hero__heading" key={language}>
+          <h1 className="hero__title">
+            {t.hero.titleLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h1>
+          <p className="hero__slogan">{t.hero.slogan}</p>
+        </div>
 
-        <p className="hero__copy">
-          {t.hero.subtitle}
-          <br />
-          {t.hero.status}
-        </p>
+        <p className="hero__copy">{t.hero.status}</p>
 
         <a
           className="hero__cta"
