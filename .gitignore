@@ -31,6 +31,3 @@ Thumbs.db
 # Local browser test profile
 .firefox-lh-test/
 
-# Private development notes
-context.md
-LOW-HOURS.md
