@@ -177,7 +177,7 @@ npm install
 npm run dev
 ```
 
-Vite serves the app from the project root (`vite.config.ts` has no custom `base`).
+Vite serves the app from the project root (`vite.config.ts` sets `base: '/'` for the custom domain).
 
 ## Build / Validation
 
@@ -196,7 +196,7 @@ npm run build
 npm run preview
 ```
 
-`dist/` and `node_modules/` are gitignored. There is no CI config in this repository.
+`dist/` and `node_modules/` are gitignored. GitHub Actions builds `dist/` and deploys it to GitHub Pages on every push to `main` (`.github/workflows/deploy.yml`). The live site is [https://lowhours.nudrak.dev](https://lowhours.nudrak.dev).
 
 ## Project Scope
 
